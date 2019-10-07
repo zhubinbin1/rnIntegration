@@ -43,8 +43,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation "com.facebook.react:react-native:+" // From node_modules
     implementation 'com.facebook.android:facebook-android-sdk:5.4.0'
+    implementation project(':react-native-update')
     if (enableHermes) {
-        def hermesPath = "../../node_modules/hermesvm/android/"
+        def hermesPath = "../node_modules/hermesvm/android/"
         debugImplementation files(hermesPath + "hermes-debug.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {

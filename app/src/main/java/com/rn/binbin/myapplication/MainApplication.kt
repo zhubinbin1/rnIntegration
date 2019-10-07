@@ -6,7 +6,8 @@ import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
 import com.facebook.react.shell.MainReactPackage
 import com.facebook.soloader.SoLoader
-
+import cn.reactnative.modules.update.UpdateContext
+import cn.reactnative.modules.update.UpdatePackage
 import java.util.Arrays
 
 
@@ -20,10 +21,16 @@ class MainApplication : Application(), ReactApplication {
         override fun getUseDeveloperSupport(): Boolean {
             return BuildConfig.DEBUG
         }
+
+        override fun getJSBundleFile(): String? {
+            return UpdateContext.getBundleUrl(this@MainApplication)
+        }
+
     }
     private val packagess: MutableList<ReactPackage>
         get() = Arrays.asList(
-            MainReactPackage()
+            MainReactPackage(),
+            UpdatePackage()
         )
 
     override fun getReactNativeHost(): ReactNativeHost {

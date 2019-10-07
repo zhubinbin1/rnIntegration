@@ -69,13 +69,3 @@ allprojects {
 执行命令:yarn add react@16.2.0
 
 8) package.json 需要写
-
-如果修改工程目录 
-
-修改工程目录结构，在android目录下生成node_module.rntest 目录下面只有andrond目录。
-移动package.json。
-执行yarn add react-native，如果有warning 执行类似 yarn add react@16.2.0 
-build.gradle 的maven路径需要修改。
-MainActivity的setJSMainModulePath(./rn/index)需要修改
-
-建议node_modules模块不提交。

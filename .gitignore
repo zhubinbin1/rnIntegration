@@ -2,3 +2,5 @@
 .idea/*
 app/build
 .gradle
+/node_modules
+package-locak.json

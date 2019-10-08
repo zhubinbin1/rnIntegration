@@ -53,16 +53,15 @@ class MyProject extends Component {
     }
   };
   checkUpdate = async () => {
-    // if (__DEV__) {
-    //   // 开发模式不支持热更新，跳过检查
-    //   return;
-    // }
+     if (__DEV__) {
+       // 开发模式不支持热更新，跳过检查
+       Alert.alert('提示', '测试包，不支持热更新');
+       return;
+     }
     let info;
-    console.log("zhubin===checkUpdate0:"+info)
     try {
       info = await checkUpdate(appKey);
     } catch (err) {
-     console.log("zhubin===checkUpdate1:"+err)
       console.warn(err);
       return;
     }
@@ -74,6 +73,7 @@ class MyProject extends Component {
     } else if (info.upToDate) {
       Alert.alert('提示', '您的应用版本已是最新.');
     } else {
+    console.log("zhubin===checkUpdate:"+info.update)
       Alert.alert('提示', '检查到新的版本'+info.name+',是否下载?\n'+ info.description, [
         {text: '是', onPress: ()=>{this.doUpdate(info)}},
         {text: '否',},

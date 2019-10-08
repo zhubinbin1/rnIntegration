@@ -42,6 +42,9 @@ import com.facebook.react.shell.MainReactPackage
  *  adb -s 5HR6R19316023703 install /Users/binbin/WORK/rntest/android/app/build/outputs/apk/release/app-release.apk
  * 编译：
  * ./gradlew aR
+ * 如果出现
+ * Unable to load script.Make sure you are either running a Metro server or that your bundle 'index.android.bundle' is packaged correctly for release
+    执行：adb reverse tcp:8081 tcp:8081
  * */
 class MainActivity() : AppCompatActivity(), DefaultHardwareBackBtnHandler {
     private var mReactRootView: ReactRootView? = null

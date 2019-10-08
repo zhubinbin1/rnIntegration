@@ -11,31 +11,32 @@ import cn.reactnative.modules.update.UpdatePackage
 import java.util.Arrays
 
 
-class MainApplication : Application(), ReactApplication {
+class MainApplication : Application() {
 
-    private val mReactNativeHost = object : ReactNativeHost(this) {
-        override fun getPackages(): MutableList<ReactPackage> {
-            return packagess
-        }
-
-        override fun getUseDeveloperSupport(): Boolean {
-            return BuildConfig.DEBUG
-        }
-
-        override fun getJSBundleFile(): String? {
-            return UpdateContext.getBundleUrl(this@MainApplication)
-        }
-
-    }
-    private val packagess: MutableList<ReactPackage>
-        get() = Arrays.asList(
-            MainReactPackage(),
-            UpdatePackage()
-        )
-
-    override fun getReactNativeHost(): ReactNativeHost {
-        return mReactNativeHost
-    }
+//
+//    private val mReactNativeHost = object : ReactNativeHost(this) {
+//        override fun getPackages(): MutableList<ReactPackage> {
+//            return packagess
+//        }
+//
+//        override fun getUseDeveloperSupport(): Boolean {
+//            return BuildConfig.DEBUG
+//        }
+//
+//        override fun getJSBundleFile(): String? {
+//            return UpdateContext.getBundleUrl(this@MainApplication)
+//        }
+//
+//    }
+//    private val packagess: MutableList<ReactPackage>
+//        get() = Arrays.asList(
+//            MainReactPackage(),
+//            UpdatePackage()
+//        )
+//
+//    override fun getReactNativeHost(): ReactNativeHost {
+//        return mReactNativeHost
+//    }
 
     override fun onCreate() {
         super.onCreate()

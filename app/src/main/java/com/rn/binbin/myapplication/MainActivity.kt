@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.KeyEvent
 import androidx.appcompat.app.AppCompatActivity
+import cn.reactnative.modules.update.UpdatePackage
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactRootView
 import com.facebook.react.common.LifecycleState
@@ -33,7 +34,6 @@ class MainActivity() : AppCompatActivity(), DefaultHardwareBackBtnHandler {
 //                startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE)
 //            }
 //        }
-//        SoLoader.init(this, false)
         mReactRootView = ReactRootView(this)
         mReactInstanceManager = ReactInstanceManager.builder()
             .setApplication(application)
@@ -41,6 +41,7 @@ class MainActivity() : AppCompatActivity(), DefaultHardwareBackBtnHandler {
             .setBundleAssetName("index.android.bundle")
             .setJSMainModulePath("./rn/index")
             .addPackage(MainReactPackage())
+            .addPackage(UpdatePackage())
             .setUseDeveloperSupport(BuildConfig.DEBUG)
             .setInitialLifecycleState(LifecycleState.RESUMED)
             .build()

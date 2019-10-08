@@ -30,6 +30,7 @@ const {appKey} = _updateConfig[Platform.OS];
 
 class MyProject extends Component {
   componentDidMount(){
+    console.log("isFirstTime===:"+isFirstTime + "    isRolledBack:"+isRolledBack  )
     if (isFirstTime) {
       Alert.alert('提示', '这是当前版本第一次启动,是否要模拟启动失败?失败将回滚到上一版本', [
         {text: '是', onPress: ()=>{throw new Error('模拟启动失败,请重启应用')}},
@@ -76,11 +77,14 @@ class MyProject extends Component {
       ]);
     }
   };
+  // showAlert(){
+  //   Alert.alert('提示', '您的应用版本已是最新.');
+  // }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          欢迎使用热更新服务
+          欢迎使用热更新服务!!!
         </Text>
         <Text style={styles.instructions}>
           这是版本一 {'\n'}

@@ -12,8 +12,12 @@ import com.facebook.react.ReactRootView
 import com.facebook.react.common.LifecycleState
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
 import com.facebook.react.shell.MainReactPackage
-
+//打包APK.生成:bundle:https://reactnative.cn/docs/signed-apk-android.html#content
+//如果node_modules 在与app同目录下。执行：
+//react-native bundle --platform android --dev false --entry-file ./rn/index.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+//如果node_modules 在与android同目录下。执行：
 //react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
 class MainActivity() : AppCompatActivity(), DefaultHardwareBackBtnHandler {
     private var mReactRootView: ReactRootView? = null
     var mReactInstanceManager: ReactInstanceManager? = null

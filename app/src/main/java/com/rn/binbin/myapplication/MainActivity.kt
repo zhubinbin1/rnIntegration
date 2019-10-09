@@ -22,7 +22,7 @@ import com.facebook.react.shell.MainReactPackage
 /**
  * 更新操作流程：
  *当前工程android目录下，执行
- * 1，react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest  ./app/build/intermediates/res/merged/release
+ * 1，react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest  ./app/src/main/res
  * 2，pushy bundle --platform android
  * 3，在https://update.reactnative.cn/dashboard/20720/version 下可看到版本信息
  *
@@ -31,6 +31,7 @@ import com.facebook.react.shell.MainReactPackage
  * https://reactnative.cn/docs/integration-with-existing-apps/
  * 发布应用：
  * https://github.com/reactnativecn/react-native-pushy/blob/master/docs/guide3.md
+ * pushy uploadApk /Users/binbin/WORK/rntest/android/app/build/outputs/apk/release/app-release.apk
  * 添加热更新功能：
  * https://github.com/reactnativecn/react-native-pushy/blob/master/docs/guide2.md
  * 准备工作：

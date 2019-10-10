@@ -1,11 +1,15 @@
 package com.rn.binbin.myapplication
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.KeyEvent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import cn.reactnative.modules.update.UpdatePackage
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactRootView
@@ -67,6 +71,7 @@ class MainActivity() : AppCompatActivity(), DefaultHardwareBackBtnHandler {
 //                startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE)
 //            }
 //        }
+        permissionCheck()
         mReactRootView = ReactRootView(this)
         mReactInstanceManager = ReactInstanceManager.builder()
             .setApplication(application)
@@ -83,6 +88,14 @@ class MainActivity() : AppCompatActivity(), DefaultHardwareBackBtnHandler {
         mReactRootView?.startReactApplication(mReactInstanceManager, MODULE_NAME, null)
 
         setContentView(mReactRootView)
+    }
+   private fun permissionCheck(){
+        val permissionCheck = ContextCompat.checkSelfPermission(this,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

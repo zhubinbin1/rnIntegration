@@ -26,7 +26,7 @@ import com.facebook.react.shell.MainReactPackage
 /**
  * 更新操作流程：
  *当前工程android目录下，执行
- * 1，react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest  ./app/src/main/res
+ * 1，react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest  ./build/intermedia/android
  * 2，pushy bundle --platform android
  * 3，在https://update.reactnative.cn/dashboard/20720/version 下可看到版本信息
  *

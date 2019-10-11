@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn react-native start"
+    "start": "yarn react-native start",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest  ./build/intermedia/android"
   },
   "dependencies": {
     "@babel/core": "*",

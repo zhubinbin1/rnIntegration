@@ -1,9 +1,11 @@
 /build
-.idea/*
-app/build
+./android/idea/*
+./android/build
 .gradle
 node_modules/*
 package-locak.json
 yarn.lock
 .update
 rn_project/
+android/app/build/
+android/.idea

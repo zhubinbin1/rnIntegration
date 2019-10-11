@@ -22,7 +22,6 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        def enableSeparateBuildPerCPUArchitecture = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -62,7 +61,7 @@ dependencies {
     implementation 'com.facebook.android:facebook-android-sdk:5.4.0'
     implementation project(':react-native-update')
     if (enableHermes) {
-        def hermesPath = "../node_modules/hermesvm/android/"
+        def hermesPath = "../../node_modules/hermesvm/android/"
         debugImplementation files(hermesPath + "hermes-debug.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {

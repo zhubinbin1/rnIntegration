@@ -12,7 +12,7 @@
     "core-js": "3",
     "metro-react-native-babel-transformer": "0.56.0",
     "react": "16.9.0",
-    "react-native": "^0.61.2",
+    "react-native": "^0.62.3",
     "react-native-update": "^5.3.0"
   }
 }
